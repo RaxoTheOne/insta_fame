@@ -26,7 +26,7 @@ class InstagramHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Instagram'),
+        title: const Text('Insta_Fame'),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
