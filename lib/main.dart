@@ -5,7 +5,7 @@ void main() {
   runApp(const MyInstaFameApp());
 }
 
-final navigationProvider = StateProvider<int>((ref) => 0);
+final navigationProvider = StateProvider<StateController<int>>((ref) => StateController<int>(0));
 
 class MyInstaFameApp extends StatelessWidget {
   const MyInstaFameApp({super.key});
@@ -35,8 +35,8 @@ class InstaFameHomePage extends ConsumerWidget {
   const InstaFameHomePage({super.key});
 
   @override
-  Widget build(BuildContext context, ScopedReader ref) {
-    final index = ref(navigationProvider).state;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final index = ref.watch(navigationProvider).state;
 
     return Scaffold(
       appBar: AppBar(
@@ -72,7 +72,7 @@ class InstaFameHomePage extends ConsumerWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         onTap: (int newIndex) {
-          context.read(navigationProvider).state = newIndex;
+          ref.read(navigationProvider).state = newIndex;
           switch (newIndex) {
             case 0:
               Navigator.pushNamed(context, '/');
