@@ -10,7 +10,7 @@ class MyInstaFameApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Instagram Clone',
+      title: 'Insta_Fame',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: const AppBarTheme(
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Instagram Clone'),
+        title: const Text('Insta_Fame'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
